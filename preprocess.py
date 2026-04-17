@@ -42,6 +42,24 @@ PHASES = {
     "3-cesta-zpet": {"number": 3, "label": "Cesta zpet (Dny 18-27)"},
 }
 
+PHASE_ORDER = ["1-cesta-tam", "2-lod", "3-cesta-zpet"]
+PHASE_DAYS = {
+    "1-cesta-tam":  set(range(1, 12)),    # 1-11 (boarding day 11 shared with 2-lod)
+    "2-lod":        set(range(11, 19)),   # 11-18 (disembark day 18 shared with 3-cesta-zpet)
+    "3-cesta-zpet": set(range(18, 28)),   # 18-27
+}
+
+
+def phase_of_day(day, current_phase=None):
+    """Return the phase containing day N. On boundary days (11, 18) that belong
+    to two phases, prefer current_phase if it contains the day."""
+    if current_phase and day in PHASE_DAYS.get(current_phase, set()):
+        return current_phase
+    for phase in PHASE_ORDER:
+        if day in PHASE_DAYS[phase]:
+            return phase
+    return None
+
 
 def detect_phase(rel):
     parts = rel.parts
@@ -113,10 +131,19 @@ def render(meta, body):
     short = meta["title"].split(":", 1)[-1].strip() if ":" in meta["title"] else meta["title"]
     crumbs.append(short)
     nav = []
+    current_phase = meta.get("phase")
+
+    def _link(day_ref):
+        day_num = int(day_ref.split("-")[-1])
+        target_phase = phase_of_day(day_num, current_phase)
+        if target_phase == current_phase or target_phase is None:
+            return f"../{day_ref}/{day_ref}.md"
+        return f"../../{target_phase}/{day_ref}/{day_ref}.md"
+
     if meta.get("prev"):
-        nav.append(f"**Predchozi:** [{meta['prev']}](../{meta['prev']}/{meta['prev']}.md)")
+        nav.append(f"**Predchozi:** [{meta['prev']}]({_link(meta['prev'])})")
     if meta.get("next"):
-        nav.append(f"**Nasledujici:** [{meta['next']}](../{meta['next']}/{meta['next']}.md)")
+        nav.append(f"**Nasledujici:** [{meta['next']}]({_link(meta['next'])})")
     fm = yaml.safe_dump(meta, allow_unicode=True, sort_keys=False).strip()
     out = [
         f"---\n{fm}\n---",

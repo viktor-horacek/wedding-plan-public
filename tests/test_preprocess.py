@@ -3,7 +3,7 @@ from datetime import date
 from pathlib import Path
 
 from preprocess import parse_day, iso_date, detect_phase, split_h1, derive_meta, render
-from preprocess import main
+from preprocess import main, phase_of_day
 
 
 def test_parse_day_extracts_number_from_nested_path():
@@ -177,6 +177,82 @@ def test_render_shared_file_no_breadcrumb_nav():
     assert "Nasledujici" not in out  # ascii next form must not appear for shared
     assert "> **Cesta:** Svatebni cesta 2026 > Finance" in out  # shared file must still have a breadcrumb
     assert "Přehled." in out
+
+
+def test_phase_of_day_interior_days():
+    assert phase_of_day(5) == "1-cesta-tam"
+    assert phase_of_day(15) == "2-lod"
+    assert phase_of_day(25) == "3-cesta-zpet"
+
+
+def test_phase_of_day_boundary_day_11_defaults_to_first_phase():
+    assert phase_of_day(11) == "1-cesta-tam"
+
+
+def test_phase_of_day_boundary_day_18_defaults_to_first_phase():
+    assert phase_of_day(18) == "2-lod"
+
+
+def test_phase_of_day_boundary_respects_current_phase_hint():
+    assert phase_of_day(11, current_phase="2-lod") == "2-lod"
+    assert phase_of_day(18, current_phase="3-cesta-zpet") == "3-cesta-zpet"
+    assert phase_of_day(11, current_phase="1-cesta-tam") == "1-cesta-tam"
+
+
+def test_phase_of_day_out_of_range():
+    assert phase_of_day(0) is None
+    assert phase_of_day(28) is None
+
+
+def test_render_cross_phase_next_link_at_phase_1_end():
+    meta = {
+        "title": "Den 11 – Pondělí 11. 5.: Nalodění",
+        "source_path": "1-cesta-tam/den-11/den-11.md",
+        "phase": "1-cesta-tam",
+        "phase_number": 1,
+        "day_number": 11,
+        "date": "2026-05-11",
+        "day_of_week": "pondeli",
+        "prev": "den-10",
+        "next": "den-12",
+    }
+    out = render(meta, "body")
+    assert "[den-10](../den-10/den-10.md)" in out
+    assert "[den-12](../../2-lod/den-12/den-12.md)" in out
+
+
+def test_render_cross_phase_prev_link_at_phase_2_start():
+    meta = {
+        "title": "Den 11 – Pondělí 11. 5.: Nalodění (lod)",
+        "source_path": "2-lod/den-11/den-11.md",
+        "phase": "2-lod",
+        "phase_number": 2,
+        "day_number": 11,
+        "date": "2026-05-11",
+        "day_of_week": "pondeli",
+        "prev": "den-10",
+        "next": "den-12",
+    }
+    out = render(meta, "body")
+    assert "[den-10](../../1-cesta-tam/den-10/den-10.md)" in out
+    assert "[den-12](../den-12/den-12.md)" in out
+
+
+def test_render_cross_phase_links_at_phase_3_boundary():
+    meta = {
+        "title": "Den 18 – Pondělí 18. 5.: Vylodění",
+        "source_path": "3-cesta-zpet/den-18/den-18.md",
+        "phase": "3-cesta-zpet",
+        "phase_number": 3,
+        "day_number": 18,
+        "date": "2026-05-18",
+        "day_of_week": "pondeli",
+        "prev": "den-17",
+        "next": "den-19",
+    }
+    out = render(meta, "body")
+    assert "[den-17](../../2-lod/den-17/den-17.md)" in out
+    assert "[den-19](../den-19/den-19.md)" in out
 
 
 def test_main_generates_individual_and_bundle(monkeypatch, tmp_path):
