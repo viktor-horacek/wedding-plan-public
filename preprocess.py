@@ -13,6 +13,7 @@ Run:      python preprocess.py
 from __future__ import annotations
 import re
 import shutil
+import unicodedata
 import yaml
 import frontmatter
 from datetime import date, timedelta
@@ -25,6 +26,13 @@ ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
 INDIVIDUAL = DIST / "individual"
 BUNDLE = DIST / "bundle.md"
+FLAT = DIST / "drive-flat"
+
+PHASE_SHORT = {
+    "1-cesta-tam":  "cesta-tam",
+    "2-lod":        "lod",
+    "3-cesta-zpet": "cesta-zpet",
+}
 
 
 def parse_day(p):
@@ -156,6 +164,59 @@ def render(meta, body):
     return "\n".join(out)
 
 
+def _slugify(text, max_len=45):
+    """Convert Czech text to lowercase ASCII slug with hyphens, truncated."""
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+    text = re.sub(r"[^a-zA-Z0-9]+", "-", text).strip("-").lower()
+    return text[:max_len].strip("-")
+
+
+def _short_descriptor(title):
+    """Extract the bit after the first colon from titles like 'Den N - weekday D.M.: Desc'."""
+    if ":" in title:
+        return title.split(":", 1)[-1].strip()
+    return title
+
+
+def flatten_for_drive():
+    """Build dist/drive-flat/ — all enhanced md as a flat list with informative
+    numeric prefixes. NotebookLM shows source names as plain filename (no folder
+    hierarchy), so the prefix encodes phase, day number, and a short descriptor
+    extracted from the H1 title. Sort order: phase days chronologically, then
+    ship-shared files, then root reference docs."""
+    if FLAT.exists():
+        shutil.rmtree(FLAT)
+    FLAT.mkdir(parents=True)
+
+    ordered = []
+    # Phase day files in chronological order; days 11 and 18 appear in two phases.
+    for phase in PHASE_ORDER:
+        for n in sorted(PHASE_DAYS[phase]):
+            src = INDIVIDUAL / phase / f"den-{n:02d}" / f"den-{n:02d}.md"
+            if src.exists():
+                ordered.append((PHASE_SHORT[phase], f"den-{n:02d}", src))
+    # Ship-shared files (non-day md directly under 2-lod/)
+    for src in sorted((INDIVIDUAL / "2-lod").glob("*.md")):
+        ordered.append(("lod", src.stem, src))
+    # Root reference files
+    for src in sorted(INDIVIDUAL.glob("*.md")):
+        ordered.append(("root", src.stem, src))
+
+    for i, (phase_short, stem, src) in enumerate(ordered, start=1):
+        text = src.read_text(encoding="utf-8")
+        title = frontmatter.loads(text).metadata.get("title", stem)
+        descriptor = _slugify(_short_descriptor(title))
+        parts = [f"{i:02d}"]
+        if phase_short != "root":
+            parts.append(phase_short)
+        parts.append(stem)
+        if descriptor and descriptor != stem:
+            parts.append(descriptor)
+        name = "-".join(parts) + ".md"
+        (FLAT / name).write_text(text, encoding="utf-8")
+    print(f"OK: drive-flat -> {FLAT} ({len(ordered)} files)")
+
+
 def main():
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -180,6 +241,7 @@ def main():
     BUNDLE.write_text("\n".join(bundle), encoding="utf-8")
     print(f"OK: {len(list(INDIVIDUAL.rglob('*.md')))} files -> {INDIVIDUAL}")
     print(f"OK: bundle -> {BUNDLE}")
+    flatten_for_drive()
 
 
 if __name__ == "__main__":
