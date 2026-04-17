@@ -1,0 +1,14 @@
+.idea
+
+# claude code settings
+.claude/settings.local.json
+
+# build artifacts
+dist/
+*.pdf
+
+# python cache
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/

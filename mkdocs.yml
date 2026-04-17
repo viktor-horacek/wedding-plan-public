@@ -1,0 +1,37 @@
+site_name: Svatební cesta 2026
+site_description: 27denní itinerář honeymoon trip (auto + MSC Grandiosa)
+docs_dir: dist/individual
+site_dir: dist/web
+use_directory_urls: true
+
+theme:
+  name: material
+  language: cs
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue
+      accent: teal
+
+plugins:
+  - search
+  - offline
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - tables
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
