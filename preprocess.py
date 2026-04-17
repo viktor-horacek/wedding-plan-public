@@ -218,8 +218,12 @@ def flatten_for_drive():
 
 
 def main():
-    if DIST.exists():
-        shutil.rmtree(DIST)
+    # Clean only what preprocess regenerates; leave EPUB/HTML/web.zip from build.sh intact.
+    if INDIVIDUAL.exists():
+        shutil.rmtree(INDIVIDUAL)
+    if BUNDLE.exists():
+        BUNDLE.unlink()
+    DIST.mkdir(parents=True, exist_ok=True)
     INDIVIDUAL.mkdir(parents=True)
     files = []
     for ph in PHASES:
