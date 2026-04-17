@@ -34,12 +34,15 @@ pandoc --toc --toc-depth=3 --standalone --embed-resources \
 
 echo ""
 echo "==> Výstupy v dist/:"
-ls -lh dist/*.epub dist/*.html dist/web.zip
+ls -lh dist/*.epub dist/*.html dist/web.zip dist/bundle.md 2>/dev/null
+ls -ld dist/drive-flat dist/individual dist/web 2>/dev/null
 echo ""
+INDIVIDUAL_COUNT=$(find dist/individual -name '*.md' | wc -l | tr -d ' ')
+FLAT_COUNT=$(find dist/drive-flat -name '*.md' | wc -l | tr -d ' ')
 echo "  - dist/svatebni-cesta.epub     → Apple Books (iPhone)"
 echo "  - dist/svatebni-cesta.html     → single-file HTML fallback"
 echo "  - dist/web.zip                 → offline web ZIP"
-echo "  - dist/web/                    → MkDocs výstup (pro GH Pages)"
+echo "  - dist/web/                    → MkDocs výstup (publikováno na GH Pages)"
 echo "  - dist/bundle.md               → single-file md (pro Roboti Gem)"
-INDIVIDUAL_COUNT=$(find dist/individual -name '*.md' | wc -l | tr -d ' ')
-echo "  - dist/individual/*.md         → $INDIVIDUAL_COUNT md pro NotebookLM (nahrát do Drive)"
+echo "  - dist/drive-flat/*.md         → $FLAT_COUNT md s prefixy (pro NotebookLM)"
+echo "  - dist/individual/*.md         → $INDIVIDUAL_COUNT md v hierarchii (zdroj pro web)"
