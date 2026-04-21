@@ -140,7 +140,16 @@
 
 #### Společné
 - [ ] Cestovní lékárnička (ibuprofen, paracetamol, Imodium, antihistaminikum, dezinfekce, obvazy)
+- [ ] **Kinedryl** (1 balení = 10 tbl) — proti kinetóze (mořská i cestovní nemoc). Primárně na loď (dny 11–18, hlavně sea day 14 a případně vlnobití), ale vzít i do auta — serpentiny Dolomity (den 3), Simplon Pass (den 20), Furka/Grimsel okruhy.
+  - **Dávkování (dospělí):** 1 tbl 60 min před cestou/naloděním; při dlouhé plavbě ½–1 tbl každé 2–3 h. Akutně při nevolnosti: 2 tbl najednou, pak ½–1 tbl po 30 min, max 4 tbl/den.
+  - **⚠️ Způsobuje ospalost → NE pro řidiče** (v autě bere jen spolujezdec). **NE s alkoholem** — na lodi tedy buď drink, nebo Kinedryl.
 - [ ] Předpis / lékařská zpráva k lékům (anglicky) — pro případ kontroly na letišti/přístavu
+
+**Výšková nemoc (AMS) — dny 21–22 (Jungfraujoch 3 454 m, Mönchsjoch 3 650 m, Schilthorn 2 970 m):**
+- Riziko na denním výletu 10–15 % (bolest hlavy, dušnost, nevolnost, únava). Vážné formy (HAPE/HACE) u denního výletu s návratem dolů **nehrozí** — symptomy odezní do několika hodin po sestupu.
+- **Speciální lék není potřeba** — ibuprofen/paracetamol z lékárničky výše pokryje bolest hlavy, Kinedryl pomůže na nevolnost.
+- Prevence: pomalu, hodně pít (1,5–2 l vody/den), **večer předem NE alkohol** (zvyšuje riziko), na Mönchsjoch nespěchat. Na stanici Jungfraujoch jsou k prodeji kyslíkové lahve. Pokud se příznaky zhoršují → **okamžitě vlakem dolů** (odjezdy každých 30 min).
+- Acetazolamid (Diamox) je na předpis a pro denní výlet zbytečný — doporučuje se až při pobytu nad 2 500 m přes noc.
 
 ### Túry a outdoor
 
