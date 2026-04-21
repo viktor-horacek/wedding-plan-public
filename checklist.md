@@ -8,14 +8,16 @@
 
 ### Auto a výbava
 
-- [ ] **Servis auta** – Rozvody, klima, pneumatiky, kapaliny, brzdové destičky.
-- [ ] **Povinná výbava** – 2× reflexní vesta (EN 20471), výstražný trojúhelník, lékárnička (AT povinná).
+- [x] **Servis auta** – Rozvody, klima, pneumatiky, kapaliny, brzdové destičky. Letní pneu nazuty.
+- [x] **Povinná výbava** – 2× reflexní vesta (EN 20471), výstražný trojúhelník, lékárnička (AT povinná).
+  - **Reflexní vesty:** ✅ 2 kusy — 1× stávající v autě (součást povinné výbavy CZ) + 1× nová **COMPASS oranžová EN 20471:2013 XL** (Alza). Pokrývá AT požadavek na řidiče i spolujezdce.
+  - **Expirace lékárničky:** Rok po expiraci, nenačatá, kompletní. **Rozhodnutí: neřešit, nevyměňovat.** CZ (vyhl. 153/2023 Sb.) + AT (ÖAMTC) — expirace sama o sobě není důvod k pokutě, rozhoduje reálný stav obsahu. DE — teoreticky Verwarnung 5–10 EUR, ale právní šedá zóna; riziko zanedbatelné. IT + CH — lékárnička není povinná vůbec.
 - [ ] **Parkovací kotouč** – Modrý kartonový kotouč pro zóny s časovým limitem (např. Cortina – 90 min zdarma s kotoučem).
-- [ ] **Sněhové řetězy** – Lehká sada na hnací nápravu (~10 kg). V CH ani IT není povinnost je vozit, ale pokud je vyvěšena značka 2.48 „Schneeketten obligatorisch" (alpské průsmyky), musíte je nasadit – pokuta CHF 100. Na Simplonu v květnu extrémně nepravděpodobné, ale levná pojistka. Zimní pneu v květnu NEJSOU potřeba (IT povinnost končí 15. 4., CH nemá zákonnou povinnost).
+- [x] **Sněhové řetězy** – **Rozhodnutí: NEKUPOVAT.** Řetězy by se stejně nedaly nasadit na letní pneu (jiný profil), v květnu na Simplon Passu je značka „Schneeketten obligatorisch" extrémně nepravděpodobná. Pokud by přesto byla, objedeme přes St. Gotthard nebo vyčkáme na otevření. Riziko < 1 %.
 - [ ] **Hotovost** – Mít ~100–200 EUR (Chiemsee pouze hotově, bankomat u přístavu Stock). + Weinstube zum guten Hirten Konstanz (den 24) = **JEN HOTOVOST** (~€35–55 pro 2). + **CHF hotovost ~80–100** pro den 25 (Wasserauen parking CHF 5 mince + Aescher ~CHF 30–45 + buffer). Vybrat na Reisebank automatu Konstanz Hbf (24/7). ⚠️ TWINT nefunguje s CZ číslem!
 - [ ] **Plastové skleničky na víno** – Na piknik/túry s proseccem (den 4 + 5). Vývrtka NENÍ potřeba (prosecco má muselet).
 - [ ] **Repelent + ochrana proti klíšťatům** – DEET/icaridin, permethrin na oblečení, nástroj na klíšťata. Prosecco Hills = klíšťový hotspot (den 4 + 5).
-- [ ] **Nabíječky, adaptéry** – Itálie typ L (třípinové), většina ubytování má i typ C (europlug).
+- [x] **Nabíječky, adaptéry** – Itálie typ L (třípinové), většina ubytování má i typ C (europlug). Koupena **Skross Pro typ J/N/L** (Alza) — pokrývá IT (L) + CH (J). Zabalit viz baleni.md.
 
 ---
 

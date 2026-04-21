@@ -192,7 +192,7 @@
 - [ ] Výstražný trojúhelník
 - [ ] Lékárnička (AT povinná)
 - [ ] **Modrý parkovací kotouč** — Cortina 90 min zdarma s kotoučem
-- [ ] **Sněhové řetězy** (lehká sada) — na Simplonu v květnu extrémně nepravděpodobné, ale pokuta CHF 100 bez nich pokud značka
+- ~~Sněhové řetězy~~ — **Rozhodnutí: NEKUPOVAT.** Letní pneu (jiný profil) + květen na Simplonu = riziko < 1 %. Pokud by přesto byla značka „Schneeketten obligatorisch", objet přes St. Gotthard.
 
 ---
 
@@ -200,7 +200,6 @@
 
 > Auto bude 7 nocí v Garage Ponte dei Mille (Janov). Valet servis, kryté.
 
-- [ ] Sněhové řetězy
 - [ ] Reflexní vesty + trojúhelník + lékárnička (auto equipment)
 - [ ] Parkovací kotouč
 - [ ] Trekkingové boty (těžké) — na lodi nepotřeba, obout až den 18
