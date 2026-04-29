@@ -82,9 +82,9 @@
 
 | Položka | Cena (2 os.) | Se slevou |
 |---|---|---|
-| Brenner mýtné (Schönberg–Brenner) | ~12,50 EUR | – |
+| Brenner mýtné (Schönberg–Brenner) ✅ koupeno 28.4. (Digital Section Toll) | 12,50 EUR | – |
 | Italské mýtné A22 (Brenner → jih) | ~15 EUR | – |
 | Parkování Swarovski | ZDARMA | – |
 | Parkování Lago di Braies (P4) | ~15 EUR | Ověřit |
 | Parkování Cortina (90 min s kotoučem) | ZDARMA | – |
-| Swarovski Kristallwelten (online) | 50 EUR | Ověřit (ZTP/P) |
+| Swarovski Kristallwelten ✅ koupeno 28.4. (uznávají český ZTP/P + Begleitperson) | – | – |

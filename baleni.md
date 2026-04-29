@@ -250,15 +250,22 @@
 
 ## APPS – stáhnout předem
 
+> **Plný checklist aplikací + offline materiálů (PDF řády, skeny dokladů, video) viz `checklist.md` → sekce „Aplikace + offline materiály".**
+
 - [x] MSC for Me — check-in, boarding pass, denní program
+- [ ] Google Translate offline — IT + EN + DE + FR + ES
+- [ ] MeteoSwiss — CH předpověď (rozhoduje HFC vs JTP, Aescher, Seealpsee)
+- [ ] Trenitalia — jízdní řády Cinque Terre Express
+- [ ] MOMUP — autobusy Veneto (den 4)
 - [ ] EMT Palma — real-time autobusy Palma de Mallorca
 - [ ] FreeNow — taxi Barcelona (záloha; primární = street-hail u Portal de la Pau)
 - [ ] Uber + Cabify — taxi Barcelona (poslední záloha, VTC zákon omezuje)
-- [ ] Trenitalia — jízdní řády Cinque Terre Express
 - [ ] SNCF Connect — jízdní řády TER Cannes↔Théoule (záloha k busu 22)
-- [ ] Google Translate offline — italština + angličtina
-- [ ] EasyPark — parkování Wasserauen (CH)
-- [x] Offline mapy (mapy.cz) — všechny přístavy + CH + DE staženy. Google Maps offline nepotřeba (EU roaming + CH eSIM)
+- [ ] bmove — parkování Linz (den 1)
+- [ ] EasyPark — záloha parkování Wasserauen (CH, den 25)
+- [ ] Walhalla appka — zdarma multilang. audio guide (CZ ano, den 27)
+- [x] Offline mapy (mapy.cz) — všechny přístavy + CH + DE staženy
+- [ ] Waze offline — Piemonte/Lago Maggiore (den 18, Pandora bez Wi-Fi!) + CH
 
 ---
 

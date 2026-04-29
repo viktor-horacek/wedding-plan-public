@@ -56,6 +56,6 @@
 
 | Položka | Cena (2 os.) | Se slevou |
 |---|---|---|
-| Rakouská dálniční známka 10denní | ~12,80 EUR | – |
+| Rakouská dálniční známka 10denní ✅ koupena 28.4. | 12,80 EUR | – |
 | Parkování Linz – uliční (svátek ZDARMA) / Tiefgarage ~3 h | ZDARMA / ~11 EUR (bmove ~8,40) | – |
 | Pöstlingbergbahn zpáteční | 18 EUR | ~9 EUR (ZTP/P) |
